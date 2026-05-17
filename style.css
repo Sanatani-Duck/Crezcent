@@ -140,17 +140,31 @@ section h2::after {
   border-radius: 18px;
   padding: 26px;
   text-align: center;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    opacity 0.6s ease;
+
+  opacity: 0;
+  transform: translateY(30px) scale(0.97);
 }
 
+/* Visible animation */
+.card.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Hover for PC */
 .card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px) scale(1.02);
   box-shadow: 0 0 30px var(--accent-soft);
 }
 
-.card.featured {
-  border-color: var(--accent);
-  box-shadow: 0 0 18px var(--accent-soft);
+/* Touch animation for mobile */
+.card:active {
+  transform: scale(0.98);
 }
 
 /* =====================
