@@ -1,0 +1,38 @@
+How To Install & Run QuackPack (Fabric 1.21.11)
+
+
+Step 1 — Install Fabric 1.21.11 in your launcher and run Minecraft Fabric 1.21.11 once and then close it
+
+
+Step 2 — Open Minecraft Folder
+
+Press:
+
+Win + R
+
+Type:
+
+%appdata%\.minecraft
+
+Press Enter
+
+
+Step 3 — Install QuackPack
+Open QuackPack.zip
+Extract ALL contents into:
+.minecraft
+Click:
+Replace Files
+Merge Folders
+
+if Windows asks
+
+
+NOTE : Please change your settings in-game according to yourself except video settings. Don't change video settings unless you know what you're doing.
+
+
+Step 4 — Launch The Game
+
+Open SKLauncher and launch. ENJOY :)
+
+
