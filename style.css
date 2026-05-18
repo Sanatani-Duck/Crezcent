@@ -224,6 +224,25 @@ section h2::after {
 .card:hover .duckclient-icon {
   transform: scale(1.08) rotate(-4deg);
 }
+.guide-icon {
+  width: 72px;
+  height: 72px;
+
+  object-fit: contain;
+
+  display: block;
+  margin: 0 auto 14px;
+
+  border-radius: 16px;
+
+  transition:
+    transform 0.35s ease;
+}
+
+/* Hover animation */
+.card:hover .guide-icon {
+  transform: scale(1.08) rotate(-3deg);
+}
 /* Visible animation */
 .card.show {
   opacity: 1;
