@@ -177,11 +177,18 @@ section h2::after {
 }
 
 .card-icon {
-  width: 48px;
-  height: 48px;
-  margin-bottom: 12px;
-}
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
 
+  display: block;
+  margin: 0 auto 14px;
+
+  padding: 6px;
+  border-radius: 14px;
+
+  background: rgba(255, 204, 0, 0.08);
+}
 /* =====================
    TEXT
 ===================== */
