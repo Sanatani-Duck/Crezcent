@@ -69,7 +69,8 @@ body {
 
 .header {
 
-  padding: 12px 24px;
+  padding:
+    6px 24px 16px;
 }
 
 .header-top {
