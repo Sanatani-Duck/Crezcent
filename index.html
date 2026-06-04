@@ -281,6 +281,9 @@
 const themeIcon =
   document.getElementById("themeIcon");
 
+const label =
+  document.querySelector(".switch-label");
+
 const saved =
   localStorage.getItem("theme");
 
@@ -291,11 +294,16 @@ if (saved === "dark") {
   themeIcon.src =
     "assets/icons/light.png";
 
+  label.textContent =
+    "Dark";
+
 } else {
 
   themeIcon.src =
     "assets/icons/dark.png";
 
+  label.textContent =
+    "Light";
 }
 
 toggle.addEventListener("click", () => {
@@ -306,6 +314,10 @@ toggle.addEventListener("click", () => {
   themeIcon.src = isDark
     ? "assets/icons/light.png"
     : "assets/icons/dark.png";
+
+  label.textContent = isDark
+    ? "Dark"
+    : "Light";
 
   localStorage.setItem(
     "theme",
