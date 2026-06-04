@@ -69,14 +69,14 @@ body.dark {
 
 .theme-switch {
 
-  width: 170px;
-  height: 70px;
+  width: 130px;
+  height: 52px;
 
   border: none;
 
   border-radius: 999px;
 
-  background: #e9e9e9;
+  background: #ececec;
 
   position: relative;
 
@@ -88,7 +88,7 @@ body.dark {
 
   justify-content: flex-end;
 
-  padding: 0 22px;
+  padding: 0 16px;
 
   transition: all 0.35s ease;
 }
@@ -97,10 +97,10 @@ body.dark {
 
   position: absolute;
 
-  left: 4px;
+  left: 3px;
 
-  width: 62px;
-  height: 62px;
+  width: 46px;
+  height: 46px;
 
   border-radius: 50%;
 
@@ -114,14 +114,16 @@ body.dark {
 
   transition: all 0.35s ease;
 
+  border: 2px solid #2a2a2a;
+
   box-shadow:
-    0 4px 12px rgba(0,0,0,0.15);
+    0 2px 8px rgba(0,0,0,0.08);
 }
 
 .switch-slider img {
 
-  width: 34px;
-  height: 34px;
+  width: 22px;
+  height: 22px;
 
   object-fit: contain;
 }
@@ -130,7 +132,11 @@ body.dark {
 
   font-weight: 700;
 
-  font-size: 0.95rem;
+  font-size: 0.75rem;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
 
   color: #222;
 
@@ -148,12 +154,17 @@ body.dark .theme-switch {
 
 body.dark .switch-slider {
 
-  left: calc(100% - 66px);
+  left: calc(100% - 49px);
 }
 
 body.dark .switch-label {
 
   color: white;
+}
+
+.theme-switch:hover {
+
+  transform: scale(1.02);
 }
 /* ========================= */
 /* BODY */
