@@ -268,33 +268,43 @@
 (() => {
 
   const toggle =
-    document.getElementById("themeToggle");
+  document.getElementById("themeToggle");
 
-  const saved =
-    localStorage.getItem("theme");
+const themeIcon =
+  document.getElementById("themeIcon");
 
-  if (saved === "dark") {
+const saved =
+  localStorage.getItem("theme");
 
-    document.body.classList.add("dark");
+if (saved === "dark") {
 
-    toggle.textContent = "☀️";
-  }
+  document.body.classList.add("dark");
 
-  toggle.addEventListener("click", () => {
+  themeIcon.src =
+    "assets/icons/light.png";
 
-    const isDark =
-      document.body.classList.toggle("dark");
+} else {
 
-    toggle.textContent =
-      isDark ? "☀️" : "🌙";
+  themeIcon.src =
+    "assets/icons/dark.png";
 
-    localStorage.setItem(
-      "theme",
-      isDark ? "dark" : "light"
-    );
+}
 
-  });
+toggle.addEventListener("click", () => {
 
+  const isDark =
+    document.body.classList.toggle("dark");
+
+  themeIcon.src = isDark
+    ? "assets/icons/light.png"
+    : "assets/icons/dark.png";
+
+  localStorage.setItem(
+    "theme",
+    isDark ? "dark" : "light"
+  );
+
+});
 })();
 
 /* ========================= */
