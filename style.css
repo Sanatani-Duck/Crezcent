@@ -4,6 +4,21 @@
   box-sizing: border-box;
 }
 
+.logo img {
+
+    height: 44px;
+
+    width: auto;
+
+    display: block;
+
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+
+    transform: scale(1.05);
+}
 /* ========================= */
 /* THEME */
 /* ========================= */
