@@ -19,6 +19,11 @@
 
     transform: scale(1.05);
 }
+
+body:not(.dark) .logo img {
+
+    filter: brightness(0);
+}
 /* ========================= */
 /* THEME */
 /* ========================= */
