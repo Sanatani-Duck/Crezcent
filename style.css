@@ -24,6 +24,31 @@ body:not(.dark) .logo img {
 
     filter: brightness(0);
 }
+#bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+
+    min-width: 100%;
+    min-height: 100%;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: -2;
+}
+
+
+.overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,0.55);
+
+    z-index: -1;
+}
 /* ========================= */
 /* THEME */
 /* ========================= */
