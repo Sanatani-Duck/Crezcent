@@ -95,25 +95,25 @@ body.dark {
 }
 
 .theme-toggle {
-    width: 65px;
-    height: 30px;
+
+    width: 70px;
+    height: 34px;
 
     border-radius: 50px;
 
     background: rgba(255,255,255,0.12);
 
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
 
-    border: 1px solid rgba(255,255,255,0.3);
+    border: 1px solid rgba(255,255,255,0.25);
 
-    display: flex;
-    align-items: center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-    padding: 3px;
+    cursor:pointer;
 
-    cursor: pointer;
-
-    transition: 0.3s;
+    overflow:hidden;
 }
 
 
@@ -134,10 +134,9 @@ body.dark {
 
 }
 .theme-toggle img {
-
-    width: 16px;
-    height:16px;
-
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
 }
 .dark .theme-toggle .circle {
 
