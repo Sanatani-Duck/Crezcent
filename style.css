@@ -94,116 +94,57 @@ body.dark {
     rgba(255,255,255,0.9);
 }
 
-#themeToggle {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
+.theme-toggle {
+    width: 65px;
+    height: 30px;
+
+    border-radius: 50px;
+
+    background: rgba(255,255,255,0.12);
+
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,0.3);
+
+    display: flex;
+    align-items: center;
+
+    padding: 3px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
 }
 
-#themeIcon {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  transition: transform 0.3s ease;
+
+.theme-toggle .circle {
+
+    width: 24px;
+    height: 24px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    transition:0.4s;
+
 }
+.theme-toggle img {
 
-#themeToggle:hover #themeIcon {
-  transform: scale(1.1);
+    width: 16px;
+    height:16px;
+
 }
+.dark .theme-toggle .circle {
 
-.theme-switch {
+    transform: translateX(35px);
 
-  width: 78px;
-  height: 32px;
+    background:#111;
 
-  border: none;
-
-  border-radius: 999px;
-
-  background: #ececec;
-
-  position: relative;
-
-  cursor: pointer;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: flex-end;
-
-  padding: 0 8px;
-
-  transition: all 0.3s ease;
-}
-
-.switch-slider {
-
-  position: absolute;
-
-  left: 2px;
-
-  width: 28px;
-  height: 28px;
-
-  border-radius: 50%;
-
-  background: white;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  transition: all 0.3s ease;
-
-  box-shadow:
-    0 2px 6px rgba(0,0,0,0.12);
-}
-
-.switch-slider img {
-
-  width: 14px;
-  height: 14px;
-
-  object-fit: contain;
-}
-
-.switch-label {
-
-  font-size: 0.55rem;
-
-  font-weight: 700;
-
-  letter-spacing: 0.08em;
-
-  text-transform: uppercase;
-
-  user-select: none;
-}
-/* DARK MODE */
-
-body.dark .theme-switch {
-
-  background: #1a1a1a;
-
-  justify-content: flex-start;
-}
-
-body.dark .switch-slider {
-
-  left: calc(100% - 30px);
-}
-body.dark .switch-label {
-
-  color: white;
-}
-
-.theme-switch:hover {
-
-  transform: scale(1.02);
 }
 /* ========================= */
 /* BODY */
