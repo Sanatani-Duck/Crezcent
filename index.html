@@ -1,383 +1,362 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- ========================= -->
+<!-- HEAD -->
+<!-- ========================= -->
+
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<title>Crezcent | Minecraft Experience</title>
+    <title>Crezcent | Minecraft Experience</title>
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet"
+          href="style.css?v=31">
 
-
-<link rel="stylesheet" href="style.css?v=31">
-
-
-<link rel="icon"
-href="logo.png">
+    <!-- Favicon -->
+    <link rel="icon"
+          href="logo.png">
 
 </head>
 
+<!-- ========================= -->
+<!-- BODY -->
+<!-- ========================= -->
 
 <body>
 
+    <!-- ========================= -->
+    <!-- BACKGROUND -->
+    <!-- ========================= -->
 
-<div class="background"></div>
-<div class="overlay"></div>
+    <div class="background"></div>
+    <div class="overlay"></div>
 
+    <!-- ========================= -->
+    <!-- SIDEBAR -->
+    <!-- ========================= -->
 
-<div class="overlay"></div>
+    <div class="sidebar-overlay"
+         id="sidebarOverlay"></div>
 
-<!-- Sidebar Overlay -->
-<div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <div class="sidebar"
+         id="sidebar">
 
-<!-- Sidebar -->
-<div class="sidebar" id="sidebar">
+        <!-- Sidebar Logo -->
 
-    <div class="sidebar-logo">
+        <div class="sidebar-logo">
 
-    <img src="logo.png" alt="Crezcent Logo">
+            <img src="logo.png"
+                 alt="Crezcent Logo">
 
-</div>
+        </div>
 
-    <a href="#">Home</a>
-    <a href="#textures">Texture Packs</a>
-    <a href="#mods">Mods</a>
-    <a href="#modpacks">Projects</a>
-    <a href="#footer">About</a>
+        <!-- Navigation -->
 
-</div>
-
-<header class="header">
-
-
-<div class="header-top">
-
-
-<div class="header-left">
-
-    <button id="menuBtn" class="menu-btn">
-        ☰
-    </button>
-
-    <div class="sidebar-logo">
-    <img src="logo.png" alt="Crezcent Logo">
-</div>
-
-</div>
-
-
-
-
-
-
-</div>
-
-
-
-</header>
-
-
-
-<section class="hero">
-
-    <div class="hero-content">
-
-        <h1>CREZCENT</h1>
-
-        <p class="hero-subtitle">
-            Minecraft Resources
-        </p>
-
-        <p class="hero-description">
-            Mods • Packs • Future Client
-        </p>
-
-        <a href="#textures" class="hero-btn">
-            Explore ↓
-        </a>
+        <a href="#">Home</a>
+        <a href="#textures">Texture Packs</a>
+        <a href="#mods">Mods</a>
+        <a href="#projects">Projects</a>
+        <a href="#footer">About</a>
 
     </div>
 
-</section>
+    <!-- ========================= -->
+    <!-- HEADER -->
+    <!-- ========================= -->
 
+    <header class="header">
 
-<main class="container">
+        <div class="header-top">
 
+            <div class="header-left">
 
+                <!-- Hamburger Menu -->
 
-<section id="textures">
+                <button id="menuBtn"
+                        class="menu-btn">
 
+                    ☰
 
-<h2>
-Texture Packs
-</h2>
+                </button>
 
+                <!-- Header Logo -->
 
+                <div class="logo">
 
-<div class="grid">
+                    <img src="logo.png"
+                         alt="Crezcent Logo">
 
+                </div>
 
-<div class="card">
+            </div>
 
+        </div>
 
-<img class="fire-icon"
-src="assets/icons/lowfire.png">
+    </header>
 
+    <!-- ========================= -->
+    <!-- HERO -->
+    <!-- ========================= -->
 
-<h3>
-Low Fire
-</h3>
+    <section class="hero">
 
+        <div class="hero-content">
 
-<p>
+            <h1>CREZCENT</h1>
 
-Custom low-fire texture pack by
-<strong>Sanatani_Duck</strong>
+            <p class="hero-subtitle">
+                Minecraft Resources
+            </p>
 
-<br>
+            <p class="hero-description">
+                Mods • Packs • Future Client
+            </p>
 
-Better PvP visibility & cleaner combat.
+            <a href="#textures"
+               class="hero-btn">
 
-<br>
+                Explore ↓
 
-<strong>Versions:</strong> 1.16 - 1.21
+            </a>
 
-</p>
+        </div>
 
+    </section>
 
+    <!-- ========================= -->
+    <!-- MAIN CONTENT -->
+    <!-- ========================= -->
 
-<a class="btn"
-href="Low Fire.zip"
-download>
+    <main class="container">
 
-Download Pack →
+        <!-- ========================= -->
+        <!-- TEXTURE PACKS -->
+        <!-- ========================= -->
 
-</a>
+        <section id="textures">
 
+            <h2>Texture Packs</h2>
 
-</div>
+            <div class="grid">
 
+                
+                <!-- Low Fire -->
 
-</div>
+                <div class="card">
 
+                    <img class="fire-icon"
+                         src="assets/icons/lowfire.png"
+                         alt="Low Fire">
 
-</section>
+                    <h3>Low Fire</h3>
 
+                    <p>
 
+                        Custom low-fire texture pack by
+                        <strong>Sanatani_Duck</strong>
 
+                        <br>
 
+                        Better PvP visibility & cleaner combat.
 
+                        <br>
 
-<section id="mods">
+                        <strong>Versions:</strong> 1.16 - 1.21
 
+                    </p>
 
-<h2>
-Mods
-</h2>
+                    <a class="btn"
+                       href="Low Fire.zip"
+                       download>
 
+                        Download Pack →
 
-<div class="grid">
+                    </a>
 
+                </div>
 
+            </div>
 
-<div class="card">
+        </section>
 
-<img class="card-icon"
-src="assets/icons/optifine.png">
+        <!-- ========================= -->
+        <!-- MODS -->
+        <!-- ========================= -->
 
+        <section id="mods">
 
-<h3>
-OptiFine
-</h3>
+            <h2>Mods</h2>
 
+            <div class="grid">
 
-<p>
-Performance boost,
-shaders & graphics enhancements.
-</p>
+                <!-- OptiFine -->
 
+                <div class="card">
 
-<a class="btn"
-href="https://optifine.net/downloads"
-target="_blank">
+                    <img class="card-icon"
+                         src="assets/icons/optifine.png"
+                         alt="OptiFine">
 
-Official Site →
+                    <h3>OptiFine</h3>
 
-</a>
+                    <p>
 
+                        Performance boost,
+                        shaders & graphics enhancements.
 
-</div>
+                    </p>
 
+                    <a class="btn"
+                       href="https://optifine.net/downloads"
+                       target="_blank">
 
+                        Official Site →
 
+                    </a>
 
+                </div>
 
-<div class="card">
+                <!-- Modrinth -->
 
+                <div class="card">
 
-<img class="card-icon"
-src="assets/icons/modrinth.png">
+                    <img class="card-icon"
+                         src="assets/icons/modrinth.png"
+                         alt="Modrinth">
 
+                    <h3>Modrinth</h3>
 
-<h3>
-Modrinth
-</h3>
+                    <p>
 
+                        Modern open-source platform
+                        for Minecraft mods & modpacks.
 
-<p>
-Modern open-source platform
-for Minecraft mods & modpacks.
-</p>
+                    </p>
 
+                    <a class="btn"
+                       href="https://modrinth.com"
+                       target="_blank">
 
-<a class="btn"
-href="https://modrinth.com"
-target="_blank">
+                        Official Site →
 
-Official Site →
+                    </a>
 
-</a>
+                </div>
 
 
-</div>
+                <!-- CurseForge -->
 
+                <div class="card">
 
+                    <img class="card-icon"
+                         src="assets/icons/curseforge.png"
+                         alt="CurseForge">
 
+                    <h3>CurseForge</h3>
 
+                    <p>
 
-<div class="card">
+                        The largest Minecraft mod &
+                        addon platform.
 
+                    </p>
 
-<img class="card-icon"
-src="assets/icons/curseforge.png">
+                    <a class="btn"
+                       href="https://www.curseforge.com/minecraft"
+                       target="_blank">
 
+                        Official Site →
 
-<h3>
-CurseForge
-</h3>
+                    </a>
 
+                </div>
 
-<p>
-The largest Minecraft mod &
-addon platform.
-</p>
+            </div>
 
+        </section>
 
-<a class="btn"
-href="https://www.curseforge.com/minecraft"
-target="_blank">
+        <!-- ========================= -->
+        <!-- PROJECTS -->
+        <!-- ========================= -->
 
-Official Site →
+        <section id="projects">
 
-</a>
+            <h2>Projects</h2>
 
+            <div class="grid">
 
-</div>
+                <!-- Quack Pack -->
 
+                <div class="card">
 
+                    <img class="quackpack-icon"
+                         src="assets/icons/quackpack.png"
+                         alt="Quack Pack">
 
-</div>
+                    <h3>Quack Pack</h3>
 
+                    <p>
 
-</section>
+                        Premium Minecraft modpack by
+                        <strong>Sanatani_Duck</strong>
 
+                        <br>
 
+                        Optimized for visuals,
+                        smooth gameplay & immersion.
 
+                    </p>
 
+                    <a class="btn"
+                       href="QuackPack.zip"
+                       download>
 
+                        Download Pack →
 
-<section id="projects">
+                    </a>
 
+                </div>
 
-<h2>
-Projects
-</h2>
+                <!-- Installation Guide -->
 
+                <div class="card">
 
+                    <img class="guide-icon"
+                         src="assets/icons/guide.png"
+                         alt="Installation Guide">
 
-<div class="grid">
+                    <h3>Installation Guide</h3>
 
+                    <p>
 
+                        Learn how to properly install
+                        Quack Pack & configure everything correctly.
 
-<div class="card">
+                    </p>
 
+                    <a class="btn"
+                       href="Modpack_Guide.txt"
+                       target="_blank">
 
-<img class="quackpack-icon"
-src="assets/icons/quackpack.png">
+                        Open Guide →
 
+                    </a>
 
-<h3>
-Quack Pack
-</h3>
+                </div>
 
+            </div>
 
-<p>
-
-Premium Minecraft modpack by
-<strong>Sanatani_Duck</strong>
-
-<br>
-
-Optimized for visuals,
-smooth gameplay & immersion.
-
-</p>
-
-
-<a class="btn"
-href="QuackPack.zip"
-download>
-
-Download Pack →
-
-</a>
-
-
-</div>
-
-
-
-
-
-<div class="card">
-
-
-<img class="guide-icon"
-src="assets/icons/guide.png">
-
-
-<h3>
-Installation Guide
-</h3>
-
-
-<p>
-
-Learn how to properly install
-Quack Pack & configure everything correctly.
-
-</p>
-
-
-
-<a class="btn"
-href="Modpack_Guide.txt"
-target="_blank">
-
-Open Guide →
-
-</a>
-
-
-
-</div>
-
+        </section>
 
 
 </div>
@@ -393,17 +372,19 @@ Open Guide →
 
 
 
-<footer class="footer">
+<!-- ========================= -->
+<!-- FOOTER -->
+<!-- ========================= -->
 
+<footer class="footer" id="footer">
 
-© 2026 Crezcent • Crafted by Sanatani_Duck
-
+    © 2026 Crezcent • Crafted by Sanatani_Duck
 
 </footer>
 
-
-
-
+<!-- ========================= -->
+<!-- JAVASCRIPT -->
+<!-- ========================= -->
 
 <script>
 
