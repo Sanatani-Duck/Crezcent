@@ -446,6 +446,41 @@ dark ? "dark" : "light";
 
 };
 
+const menuBtn = document.getElementById("menuBtn");
+
+const sidebar = document.getElementById("sidebar");
+
+const overlay = document.getElementById("sidebarOverlay");
+
+menuBtn.addEventListener("click", () => {
+
+    sidebar.classList.add("open");
+
+    overlay.classList.add("show");
+
+});
+
+overlay.addEventListener("click", () => {
+
+    sidebar.classList.remove("open");
+
+    overlay.classList.remove("show");
+
+});
+
+document.addEventListener("keydown",(e)=>{
+
+    if(e.key==="Escape"){
+
+        sidebar.classList.remove("open");
+
+        overlay.classList.remove("show");
+
+    }
+
+});
+    
+
 
 
 </script>
