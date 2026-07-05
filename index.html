@@ -403,49 +403,6 @@ Open Guide →
 
 <script>
 
-
-
-const icon =
-document.getElementById("themeIcon");
-
-
-
-if(localStorage.theme === "dark"){
-
-document.body.classList.add("dark");
-
-icon.src =
-"assets/icons/light.png";
-
-}
-
-
-
-toggle.onclick = ()=>{
-
-
-document.body.classList.toggle("dark");
-
-
-let dark =
-document.body.classList.contains("dark");
-
-
-icon.src =
-dark
-?
-"assets/icons/light.png"
-:
-"assets/icons/dark.png";
-
-
-
-localStorage.theme =
-dark ? "dark" : "light";
-
-
-};
-
 const menuBtn = document.getElementById("menuBtn");
 
 const sidebar = document.getElementById("sidebar");
