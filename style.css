@@ -65,7 +65,7 @@ body {
 
 .header {
 
-    padding: 20px;
+    padding: 16px 20px 0;
 
 }
 
@@ -77,40 +77,6 @@ body {
 
 }
 
-.tagline {
-
-    text-align: center;
-    margin-top: 20px;
-    color: #aaa;
-
-}
-
-/* ========================= */
-/* NAVIGATION */
-/* ========================= */
-
-.nav {
-
-    display: flex;
-    justify-content: center;
-
-    gap: 25px;
-
-    padding: 20px;
-
-    border-bottom: 1px solid #333;
-
-}
-
-.nav a {
-
-    color: #aaa;
-
-    text-decoration: none;
-
-    font-weight: 600;
-
-}
 
 /* ========================= */
 /* HERO */
