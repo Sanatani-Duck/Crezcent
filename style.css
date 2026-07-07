@@ -566,3 +566,21 @@ pointer-events:auto;
     color: #aaa;
 
 }
+
+/* ========================= */
+/* LOGO */
+/* ========================= */
+
+.logo {
+    width: 44px !important;
+    height: 44px !important;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.logo img {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain;
+}
