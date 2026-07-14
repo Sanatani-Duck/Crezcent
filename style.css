@@ -47,7 +47,7 @@ body {
 
     z-index: -1;
 
-}65
+}
 
 /* ========================= */
 /* LOGO */
@@ -621,7 +621,7 @@ pointer-events:auto;
 
 }
 
-.featured-card:hover{
+.featured-card.reveal.show:hover{
 
     transform:translateY(-10px);
 
@@ -632,7 +632,6 @@ pointer-events:auto;
         0 0 35px rgba(255,255,255,.15);
 
 }
-
 @media(max-width:850px){
 
 .featured-card{
