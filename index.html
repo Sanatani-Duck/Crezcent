@@ -771,6 +771,17 @@ const counter =
 document.getElementById("galleryCounter");
 
 
+/* ---------- ZOOM ---------- */
+
+let scale = 1;
+
+const MIN_SCALE = 1;
+const MAX_SCALE = 5;
+
+let translateX = 0;
+let translateY = 0;
+
+
 /* ---------- VARIABLES ---------- */
 
 let currentIndex = 0;
@@ -811,6 +822,13 @@ function openGallery(index){
 
     updateCounter();
 
+    scale = 1;
+
+translateX = 0;
+translateY = 0;
+
+applyTransform();
+    
     gallery.classList.add("active");
 
     isOpen=true;
@@ -825,6 +843,11 @@ function closeGallery(){
     gallery.classList.remove("active");
 
     isOpen=false;
+
+    scale = 1;
+
+translateX = 0;
+translateY = 0;
 
 }
 
@@ -912,6 +935,14 @@ function finish(){
 
 }
 
+/* ---------- APPLY TRANSFORM ---------- */
+
+function applyTransform(){
+
+    currentImg.style.transform =
+        `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+
+}
 
 /* ---------- NEXT ---------- */
 
@@ -998,6 +1029,63 @@ document.addEventListener("keydown",(e)=>{
         previousImage();
 
     }
+
+
+/* ---------- WHEEL ZOOM ---------- */
+
+currentImg.addEventListener("wheel",(e)=>{
+
+    e.preventDefault();
+
+    const amount = 0.15;
+
+    if(e.deltaY < 0){
+
+        scale += amount;
+
+    }
+
+    else{
+
+        scale -= amount;
+
+    }
+
+    scale = Math.max(
+        MIN_SCALE,
+        Math.min(MAX_SCALE,scale)
+    );
+
+    applyTransform();
+
+},{passive:false});
+
+
+/* ---------- DOUBLE CLICK ---------- */
+
+currentImg.addEventListener("dblclick",()=>{
+
+    if(scale===1){
+
+        scale=2;
+
+    }
+
+    else{
+
+        scale=1;
+
+        translateX=0;
+
+        translateY=0;
+
+    }
+
+    applyTransform();
+
+});
+
+    
 
 });
 
