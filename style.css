@@ -936,7 +936,8 @@ pointer-events:auto;
 
     -webkit-user-drag:none;
 
-    transition:none;
+    transition:
+transform .18s ease;
 
     will-change:transform,opacity;
 
