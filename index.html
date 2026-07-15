@@ -737,93 +737,6 @@ reveals.forEach(item=>{
 });
 
 
-/* ========================= */
-/* SCREENSHOTS */
-/* ========================= */
-
-    
-const screenshots = document.querySelectorAll(".screenshot");
-
-const lightbox = document.getElementById("lightbox");
-
-const lightboxImg = document.getElementById("lightbox-img");
-
-const closeBtn = document.querySelector(".close-lightbox");
-
-const prevBtn = document.querySelector(".lightbox-prev");
-
-const nextBtn = document.querySelector(".lightbox-next");
-
-let current = 0;
-
-function openLightbox(index){
-
-    current = index;
-
-    lightbox.classList.add("show");
-
-    lightboxImg.src = screenshots[current].src;
-
-}
-
-screenshots.forEach((img,index)=>{
-
-    img.addEventListener("click",()=>{
-
-        openLightbox(index);
-
-    });
-
-});
-
-closeBtn.onclick=()=>{
-
-    lightbox.classList.remove("show");
-
-};
-
-lightbox.onclick=(e)=>{
-
-    if(e.target===lightbox){
-
-        lightbox.classList.remove("show");
-
-    }
-
-};
-
-prevBtn.onclick=(e)=>{
-
-    e.stopPropagation();
-
-    current=(current-1+screenshots.length)%screenshots.length;
-
-    lightboxImg.src=screenshots[current].src;
-
-};
-
-nextBtn.onclick=(e)=>{
-
-    e.stopPropagation();
-
-    current=(current+1)%screenshots.length;
-
-    lightboxImg.src=screenshots[current].src;
-
-};
-
-document.addEventListener("keydown",(e)=>{
-
-    if(!lightbox.classList.contains("show")) return;
-
-    if(e.key==="Escape") lightbox.classList.remove("show");
-
-    if(e.key==="ArrowLeft") prevBtn.click();
-
-    if(e.key==="ArrowRight") nextBtn.click();
-
-});
-
 /* ===================================================== */
 /* CREZCENT GALLERY */
 /* PART 1 */
@@ -837,14 +750,14 @@ document.querySelectorAll(".gallery-image");
 const gallery =
 document.getElementById("galleryLightbox");
 
-const galleryOverlay =
+const overlay =
 document.querySelector(".gallery-overlay");
 
 const currentImg =
 document.getElementById("galleryCurrent");
 
 const nextImg =
-document.getElementById("galleryIncoming");
+document.getElementById("galleryNext");
 
 const prevBtn =
 document.getElementById("galleryPrev");
