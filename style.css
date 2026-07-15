@@ -914,10 +914,12 @@ pointer-events:auto;
 }
 
 /* ===================================================== */
-/* VIEWER IMAGE */
+/* GALLERY IMAGES */
 /* ===================================================== */
 
-#galleryViewer{
+.gallery-viewer{
+
+    position:absolute;
 
     max-width:90%;
 
@@ -925,25 +927,24 @@ pointer-events:auto;
 
     border-radius:24px;
 
-    border:
-        1px solid rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,.15);
 
     box-shadow:
         0 20px 70px rgba(0,0,0,.45);
 
-    transform:
-        scale(.95);
-
-    opacity:0;
-
-    transition:
-        transform .55s cubic-bezier(.22,1,.36,1),
-        opacity .45s ease,
-        filter .45s ease;
-
     user-select:none;
 
     -webkit-user-drag:none;
+
+    transition:none;
+
+    will-change:transform,opacity;
+
+}
+
+.hidden{
+
+    display:none;
 
 }
 
