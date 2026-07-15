@@ -750,8 +750,7 @@ document.querySelectorAll(".gallery-image");
 const gallery =
 document.getElementById("galleryLightbox");
 
-const overlay =
-document.querySelector(".gallery-overlay");
+const galleryOverlay = document.querySelector(".gallery-overlay");
 
 const currentImg =
 document.getElementById("galleryCurrent");
@@ -973,7 +972,7 @@ prevBtn.addEventListener("click",previousImage);
 
 closeBtn.addEventListener("click",closeGallery);
 
-overlay.addEventListener("click",closeGallery);
+galleryOverlay.addEventListener("click", closeGallery);
 
 
 /* ---------- KEYBOARD ---------- */
