@@ -941,6 +941,12 @@ transform .18s ease;
 
     will-change:transform,opacity;
 
+    cursor: default;
+
+touch-action: none;
+
+user-select: none;
+
 }
 
 .hidden{
