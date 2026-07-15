@@ -324,10 +324,10 @@
 
 <!-- Next Image -->
 <img
-    id="galleryNext"
-    class="gallery-viewer hidden"
-    src=""
-    alt="Next Screenshot">
+id="galleryIncoming"
+class="gallery-viewer hidden"
+src=""
+alt="Next Screenshot">
             
         </div>
 
@@ -465,7 +465,7 @@
         </section>
 
 
-        <!-- ========================= -->
+<!-- ========================= -->
 <!-- FEATURED PROJECT -->
 <!-- ========================= -->
 
@@ -821,6 +821,271 @@ document.addEventListener("keydown",(e)=>{
     if(e.key==="ArrowLeft") prevBtn.click();
 
     if(e.key==="ArrowRight") nextBtn.click();
+
+});
+
+/* ===================================================== */
+/* CREZCENT GALLERY */
+/* PART 1 */
+/* ===================================================== */
+
+/* ---------- ELEMENTS ---------- */
+
+const galleryImages =
+document.querySelectorAll(".gallery-image");
+
+const gallery =
+document.getElementById("galleryLightbox");
+
+const overlay =
+document.querySelector(".gallery-overlay");
+
+const currentImg =
+document.getElementById("galleryCurrent");
+
+const nextImg =
+document.getElementById("galleryIncoming");
+
+const prevBtn =
+document.getElementById("galleryPrev");
+
+const nextBtn =
+document.getElementById("galleryNext");
+
+const closeBtn =
+document.getElementById("galleryClose");
+
+const counter =
+document.getElementById("galleryCounter");
+
+
+/* ---------- VARIABLES ---------- */
+
+let currentIndex = 0;
+
+let isOpen = false;
+
+let isAnimating = false;
+
+
+/* ---------- IMAGE LIST ---------- */
+
+const images = [];
+
+galleryImages.forEach(img=>{
+
+    images.push(img.src);
+
+});
+
+
+/* ---------- COUNTER ---------- */
+
+function updateCounter(){
+
+    counter.textContent =
+        `${currentIndex+1} / ${images.length}`;
+
+}
+
+
+/* ---------- OPEN ---------- */
+
+function openGallery(index){
+
+    currentIndex=index;
+
+    currentImg.src=images[currentIndex];
+
+    updateCounter();
+
+    gallery.classList.add("active");
+
+    isOpen=true;
+
+}
+
+
+/* ---------- CLOSE ---------- */
+
+function closeGallery(){
+
+    gallery.classList.remove("active");
+
+    isOpen=false;
+
+}
+
+
+/* ---------- ANIMATION ---------- */
+
+function animate(direction){
+
+    if(isAnimating) return;
+
+    isAnimating=true;
+
+    nextImg.classList.remove("hidden");
+
+    nextImg.src=images[currentIndex];
+
+    currentImg.style.transition="none";
+    nextImg.style.transition="none";
+
+    if(direction==="next"){
+
+        nextImg.style.transform="translateX(100%)";
+
+    }
+
+    else{
+
+        nextImg.style.transform="translateX(-100%)";
+
+    }
+
+    requestAnimationFrame(()=>{
+
+        currentImg.style.transition=
+        "transform .55s cubic-bezier(.22,1,.36,1)";
+
+        nextImg.style.transition=
+        "transform .55s cubic-bezier(.22,1,.36,1)";
+
+        if(direction==="next"){
+
+            currentImg.style.transform=
+            "translateX(-100%)";
+
+        }
+
+        else{
+
+            currentImg.style.transform=
+            "translateX(100%)";
+
+        }
+
+        nextImg.style.transform=
+        "translateX(0)";
+
+    });
+
+    nextImg.addEventListener("transitionend",finish,{
+        once:true
+    });
+
+}
+
+
+/* ---------- FINISH ---------- */
+
+function finish(){
+
+    currentImg.src=nextImg.src;
+
+    currentImg.style.transition="none";
+
+    currentImg.style.transform="translateX(0)";
+
+    nextImg.classList.add("hidden");
+
+    nextImg.style.transition="none";
+
+    nextImg.style.transform="translateX(0)";
+
+    updateCounter();
+
+    isAnimating=false;
+
+}
+
+
+/* ---------- NEXT ---------- */
+
+function nextImage(){
+
+    if(isAnimating) return;
+
+    currentIndex++;
+
+    if(currentIndex>=images.length){
+
+        currentIndex=0;
+
+    }
+
+    animate("next");
+
+}
+
+
+/* ---------- PREVIOUS ---------- */
+
+function previousImage(){
+
+    if(isAnimating) return;
+
+    currentIndex--;
+
+    if(currentIndex<0){
+
+        currentIndex=images.length-1;
+
+    }
+
+    animate("prev");
+
+}
+
+
+/* ---------- OPEN CLICK ---------- */
+
+galleryImages.forEach((img,index)=>{
+
+    img.addEventListener("click",()=>{
+
+        openGallery(index);
+
+    });
+
+});
+
+
+/* ---------- BUTTONS ---------- */
+
+nextBtn.addEventListener("click",nextImage);
+
+prevBtn.addEventListener("click",previousImage);
+
+closeBtn.addEventListener("click",closeGallery);
+
+overlay.addEventListener("click",closeGallery);
+
+
+/* ---------- KEYBOARD ---------- */
+
+document.addEventListener("keydown",(e)=>{
+
+    if(!isOpen) return;
+
+    if(e.key==="Escape"){
+
+        closeGallery();
+
+    }
+
+    if(e.key==="ArrowRight"){
+
+        nextImage();
+
+    }
+
+    if(e.key==="ArrowLeft"){
+
+        previousImage();
+
+    }
 
 });
 
