@@ -742,88 +742,15 @@ pointer-events:auto;
     height: 100% !important;
     object-fit: contain;
 }
-
 /* ===================================================== */
-/* SCREENSHOTS SECTION */
-/* ===================================================== */
-
-.screenshot-grid{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(auto-fit,minmax(320px,1fr));
-
-    gap:28px;
-
-}
-
-.screenshot-card{
-
-    overflow:hidden;
-
-    border-radius:24px;
-
-    background:rgba(255,255,255,.06);
-
-    border:1px solid rgba(255,255,255,.15);
-
-    backdrop-filter:blur(15px);
-
-    transition:
-        transform .45s cubic-bezier(.22,1,.36,1),
-        box-shadow .45s cubic-bezier(.22,1,.36,1),
-        border-color .45s cubic-bezier(.22,1,.36,1);
-
-}
-
-.screenshot-card:hover{
-
-    transform:
-        translateY(-10px)
-        scale(1.02);
-
-    border-color:
-        rgba(255,255,255,.30);
-
-    box-shadow:
-        0 18px 40px rgba(0,0,0,.30),
-        0 0 35px rgba(255,255,255,.12);
-
-}
-
-.gallery-image{
-
-    display:block;
-
-    width:100%;
-
-    height:auto;
-
-    cursor:pointer;
-
-    transition:
-        transform .6s cubic-bezier(.22,1,.36,1);
-
-}
-
-.screenshot-card:hover .gallery-image{
-
-    transform:scale(1.04);
-
-}
-
-/* ===================================================== */
-/* LIGHTBOX */
+/* GALLERY */
 /* ===================================================== */
 
-.gallery-lightbox{
+.gallery{
 
     position:fixed;
 
     inset:0;
-
-    z-index:99999;
 
     display:flex;
 
@@ -835,44 +762,40 @@ pointer-events:auto;
 
     visibility:hidden;
 
-    pointer-events:none;
-
     transition:
-        opacity .45s ease,
-        visibility .45s ease;
+        opacity .35s ease,
+        visibility .35s ease;
+
+    z-index:5000;
 
 }
 
-.gallery-lightbox.active{
+.gallery.active{
 
     opacity:1;
 
     visibility:visible;
 
-    pointer-events:auto;
-
 }
 
 /* ===================================================== */
-/* BACKGROUND BLUR */
+/* BACKDROP */
 /* ===================================================== */
 
-.gallery-overlay{
+.gallery-backdrop{
 
     position:absolute;
 
     inset:0;
 
-    background:
-        rgba(0,0,0,.82);
+    background:rgba(0,0,0,.88);
 
-    backdrop-filter:
-        blur(12px);
+    backdrop-filter:blur(10px);
 
 }
 
 /* ===================================================== */
-/* MAIN CONTAINER */
+/* CONTAINER */
 /* ===================================================== */
 
 .gallery-container{
@@ -889,19 +812,47 @@ pointer-events:auto;
 
     align-items:center;
 
+    overflow:hidden;
+
 }
 
 /* ===================================================== */
-/* IMAGE STAGE */
+/* STAGE */
 /* ===================================================== */
 
 .gallery-stage{
 
-    position:relative;
-
     width:100%;
 
     height:100%;
+
+    overflow:hidden;
+
+}
+
+/* ===================================================== */
+/* TRACK */
+/* ===================================================== */
+
+.gallery-track{
+
+    display:flex;
+
+    height:100%;
+
+    transition:transform .45s cubic-bezier(.22,1,.36,1);
+
+    will-change:transform;
+
+}
+
+/* ===================================================== */
+/* SLIDE */
+/* ===================================================== */
+
+.gallery-slide{
+
+    flex:0 0 100%;
 
     display:flex;
 
@@ -909,165 +860,74 @@ pointer-events:auto;
 
     align-items:center;
 
-    overflow:hidden;
-
 }
 
 /* ===================================================== */
-/* GALLERY IMAGES */
+/* IMAGE */
 /* ===================================================== */
 
-.gallery-viewer{
+.gallery-slide img{
 
-    position:absolute;
+    max-width:92%;
 
-    max-width:90%;
+    max-height:88%;
 
-    max-height:85%;
-
-    border-radius:24px;
-
-    border:1px solid rgba(255,255,255,.15);
-
-    box-shadow:
-        0 20px 70px rgba(0,0,0,.45);
+    border-radius:20px;
 
     user-select:none;
 
     -webkit-user-drag:none;
 
-    transition:
-transform .18s ease;
+    object-fit:contain;
 
-    will-change:transform,opacity;
-
-    cursor: default;
-
-touch-action: none;
-
-user-select: none;
-
-}
-
-.hidden{
-
-    display:none;
-
-}
-
-.gallery-lightbox.active #galleryViewer{
-
-    opacity:1;
-
-    transform:scale(1);
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.55);
 
 }
 
 /* ===================================================== */
-/* CLOSE BUTTON */
+/* BUTTONS */
 /* ===================================================== */
 
+.gallery-prev,
+.gallery-next,
 .gallery-close{
 
     position:absolute;
 
-    top:15px;
+    width:56px;
 
-    right:20px;
-
-    z-index:100;
-
-    width:52px;
-
-    height:52px;
+    height:56px;
 
     border:none;
 
     border-radius:50%;
 
-    cursor:pointer;
+    background:rgba(255,255,255,.08);
 
     color:white;
 
-    font-size:28px;
+    font-size:26px;
 
-    background:
-        rgba(255,255,255,.08);
-
-    backdrop-filter:blur(15px);
-
-    border:
-        1px solid rgba(255,255,255,.15);
-
-    transition:
-        all .35s cubic-bezier(.22,1,.36,1);
-
-}
-
-.gallery-close:hover{
-
-    transform:scale(1.08);
-
-    background:
-        rgba(255,255,255,.15);
-
-}
-
-/* ===================================================== */
-/* NAV BUTTONS */
-/* ===================================================== */
-
-.gallery-prev,
-.gallery-next{
-
-    position:absolute;
-
-    top:50%;
-
-    transform:
-        translateY(-50%);
-
-    z-index:100;
-
-    width:64px;
-
-    height:64px;
-
-    border:none;
-
-    border-radius:50%;
+    backdrop-filter:blur(14px);
 
     cursor:pointer;
 
-    color:white;
-
-    font-size:34px;
-
-    background:
-        rgba(255,255,255,.08);
-
-    backdrop-filter:
-        blur(15px);
-
-    border:
-        1px solid rgba(255,255,255,.15);
-
-    transition:
-        all .35s cubic-bezier(.22,1,.36,1);
+    transition:.25s;
 
 }
 
 .gallery-prev:hover,
-.gallery-next:hover{
+.gallery-next:hover,
+.gallery-close:hover{
 
-    transform:
-        translateY(-50%)
-        scale(1.08);
+    transform:scale(1.08);
 
-    background:
-        rgba(255,255,255,.15);
+    background:rgba(255,255,255,.18);
 
 }
+
+/* ===================================================== */
 
 .gallery-prev{
 
@@ -1081,154 +941,36 @@ user-select: none;
 
 }
 
-/* ===================================================== */
-/* BOTTOM BAR */
-/* ===================================================== */
+.gallery-close{
 
-.gallery-bottom{
+    top:20px;
 
-    position:absolute;
-
-    bottom:20px;
-
-    left:50%;
-
-    transform:
-        translateX(-50%);
-
-    display:flex;
-
-    gap:15px;
+    right:20px;
 
 }
 
-.gallery-counter,
-.gallery-zoom{
+/* ===================================================== */
+/* COUNTER */
+/* ===================================================== */
+
+.gallery-counter{
+
+    position:absolute;
+
+    bottom:25px;
+
+    left:50%;
+
+    transform:translateX(-50%);
 
     padding:10px 18px;
 
     border-radius:999px;
 
-    background:
-        rgba(255,255,255,.08);
+    background:rgba(255,255,255,.08);
 
-    backdrop-filter:
-        blur(15px);
-
-    border:
-        1px solid rgba(255,255,255,.15);
-
-    color:white;
+    backdrop-filter:blur(15px);
 
     font-weight:600;
-
-}
-
-/* ===================================================== */
-/* SLIDE ANIMATION CLASSES */
-/* ===================================================== */
-
-.slide-left{
-
-    animation:
-        slideLeft .45s cubic-bezier(.22,1,.36,1);
-
-}
-
-.slide-right{
-
-    animation:
-        slideRight .45s cubic-bezier(.22,1,.36,1);
-
-}
-
-@keyframes slideLeft{
-
-    from{
-
-        opacity:0;
-
-        transform:
-            translateX(120px)
-            scale(.98);
-
-        filter:blur(6px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-            translateX(0)
-            scale(1);
-
-        filter:blur(0);
-
-    }
-
-}
-
-@keyframes slideRight{
-
-    from{
-
-        opacity:0;
-
-        transform:
-            translateX(-120px)
-            scale(.98);
-
-        filter:blur(6px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-            translateX(0)
-            scale(1);
-
-        filter:blur(0);
-
-    }
-
-}
-
-/* ===================================================== */
-/* MOBILE */
-/* ===================================================== */
-
-@media(max-width:768px){
-
-    .gallery-prev,
-    .gallery-next{
-
-        width:52px;
-
-        height:52px;
-
-        font-size:26px;
-
-    }
-
-    .gallery-close{
-
-        width:46px;
-
-        height:46px;
-
-        font-size:22px;
-
-    }
-
-    .gallery-bottom{
-
-        bottom:12px;
-
-    }
 
 }
