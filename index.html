@@ -719,6 +719,65 @@ reveals.forEach(item=>{
 });
 
 
+/* ========================= */
+/* SCREENSHOT VIEWER */
+/* ========================= */
+
+const galleryImages = document.querySelectorAll(".screenshot-card img");
+
+const viewer = document.getElementById("viewer");
+
+const viewerImage = document.getElementById("viewerImage");
+
+const viewerBackdrop = document.querySelector(".viewer-backdrop");
+
+const viewerClose = document.querySelector(".viewer-close");
+
+/* ---------- OPEN ---------- */
+
+galleryImages.forEach(image => {
+
+    image.addEventListener("click", () => {
+
+        viewerImage.src = image.dataset.full;
+
+        viewerImage.alt = image.alt;
+
+        viewer.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+
+    });
+
+});
+
+/* ---------- CLOSE ---------- */
+
+function closeViewer() {
+
+    viewer.classList.remove("active");
+
+    document.body.style.overflow = "";
+
+}
+
+viewerClose.addEventListener("click", closeViewer);
+
+viewerBackdrop.addEventListener("click", closeViewer);
+
+/* ---------- ESC ---------- */
+
+document.addEventListener("keydown", (e) => {
+
+    if (e.key === "Escape") {
+
+        closeViewer();
+
+    }
+
+});
+    
+
 </script>
 
 </body>
