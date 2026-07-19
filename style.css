@@ -745,6 +745,19 @@ pointer-events:auto;
 
 
 /* ===================================================== */
+/* SCREENSHOTS CONTAINER */
+/* ===================================================== */
+
+.screenshots-container{
+
+    max-width:980px;
+
+    margin:0 auto;
+
+}
+
+
+/* ===================================================== */
 /* SCREENSHOTS */
 /* ===================================================== */
 
@@ -755,10 +768,6 @@ pointer-events:auto;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 
     gap:24px;
-
-    max-width:980px;
-
-    margin:0 auto;
 
 }
 
