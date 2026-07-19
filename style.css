@@ -742,3 +742,85 @@ pointer-events:auto;
     height: 100% !important;
     object-fit: contain;
 }
+
+
+/* ===================================================== */
+/* SCREENSHOTS */
+/* ===================================================== */
+
+.screenshot-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:32px;
+
+}
+
+/* ===================================================== */
+
+.screenshot-card{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+
+    cursor:pointer;
+
+}
+
+/* ===================================================== */
+
+.screenshot-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:rgba(255,255,255,.35);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.28),
+        0 0 28px rgba(255,255,255,.12);
+
+}
+
+/* ===================================================== */
+
+.screenshot-card img{
+
+    display:block;
+
+    width:100%;
+
+    aspect-ratio:16/9;
+
+    object-fit:cover;
+
+}
+
+/* ===================================================== */
+
+.screenshot-card h3{
+
+    padding:18px;
+
+    text-align:center;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    color:white;
+
+}
